@@ -4,7 +4,6 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.utility.DockerImageName;
 import org.testcontainers.utility.MountableFile;
-
 public class PostgreSQLTestContainer extends PostgreSQLContainer<PostgreSQLTestContainer> {
     public static final String SERVICE_NAME = "POSTGRESQL_CONTAINER";
     public final int postgresPort = 5432;
@@ -21,7 +20,7 @@ public class PostgreSQLTestContainer extends PostgreSQLContainer<PostgreSQLTestC
         System.out.println("POSTGRES_PASSWORD: " + postgresPassword);
         System.out.println("POSTGRES_DB: " + postgresDb);
     }
-
+    
     public void start(){
         super.addFixedExposedPort(postgresPort, postgresPort);
         super.start();

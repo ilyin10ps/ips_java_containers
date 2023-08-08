@@ -1,5 +1,4 @@
 import containers.PostgreSQLTestContainer;
-
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         PostgreSQLTestContainer postgres_test = new PostgreSQLTestContainer(
@@ -9,6 +8,5 @@ public class Main {
                 "init_postgresql.sql"
         );
         postgres_test.start();
-//        Thread.sleep(1000000);
     }
 }
