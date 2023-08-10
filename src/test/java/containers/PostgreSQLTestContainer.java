@@ -15,7 +15,7 @@ public class PostgreSQLTestContainer extends PostgreSQLContainer<PostgreSQLTestC
         this.withEnv("POSTGRES_USER", postgresUser);
         this.withEnv("POSTGRES_PASSWORD", postgresPassword);
         this.withEnv("POSTGRES_DB", postgresDb);
-        this.waitingFor(Wait.forLogMessage("БД Postgres готова к поднятию", 2));
+        this.waitingFor(Wait.forLogMessage(".*database system is ready to accept connections.*", 2));
         System.out.println("POSTGRES_USER: " + postgresUser);
         System.out.println("POSTGRES_PASSWORD: " + postgresPassword);
         System.out.println("POSTGRES_DB: " + postgresDb);
